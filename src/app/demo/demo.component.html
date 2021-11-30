@@ -1,0 +1,86 @@
+<p>demo works!</p>
+<mat-tab-group>
+  <mat-tab label="Login">
+
+    <div fxLayoutAlign="center center" fxFlexFill>
+      <mat-card fxFlex="35" >
+          <form action="" fxLayoutAlign="stretch" fxLayout="column">
+          <mat-form-field >
+              <input matInput placeholder="username" required>
+          </mat-form-field>
+
+          <mat-form-field>
+              <input matInput type="password" placeholder="password" required>
+          </mat-form-field>
+
+          <button mat-button type="submit" color="primary">Login</button>
+      </form>
+      </mat-card>
+  </div>
+
+  </mat-tab>
+  <mat-tab label="Billing Details">
+  <app-billingaddress></app-billingaddress>
+
+  </mat-tab>
+  <mat-tab label="Card Details">
+
+
+    <form name="ccForm">
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" class="form-control" id="cardNumber" cc-number name="ccNumber" ng-model="card.number">
+      </div>
+      <div>
+        Type:
+      </div>
+      <div>
+        Valid:
+      </div>
+
+        <hr>
+
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" class="form-control" id="cvc" cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="card.cvc">
+      </div>
+      <div>
+        Valid:
+      </div>
+
+        <hr>
+
+      <div class="form-group">
+        <label for="card-number">Expiration</label>
+        <div class="row" cc-exp>
+          <div class="col-xs-3">
+            <input placeholder="MM" type="text" class="form-control" cc-exp-month name="ccExpMonth" ng-model="card.expiration.month">
+          </div>
+          <div class="col-xs-3">
+            <input placeholder="YY" type="text" class="form-control" cc-exp-year name="ccExpYear" ng-model="card.expiration.year">
+          </div>
+        </div>
+      </div>
+      <div>
+        Valid Month:
+      </div>
+      <div>
+        Valid Year:
+      </div>
+      <div>
+        Valid Pair:
+      </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+  </mat-tab>
+</mat-tab-group>
